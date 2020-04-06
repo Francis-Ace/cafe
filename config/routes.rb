@@ -7,7 +7,15 @@ Rails.application.routes.draw do
 
   # GET / => categories#index
   root to: 'categories#index'
+  # get 'categories', to: 'categories#index'
 
   # GET /categories/:id => categories/show, will be know as category_path
-  get 'categories/:id', to: 'categories#show', id: /\d+/, as: 'category'
+  # get 'categories/:id', to: 'categories#show', id: /\d+/, as: 'category'
+  resources 'categories', only: %i[index show]
+
+
+  # Get /products => products#index
+  # Get /products/:id => products#show
+  # This is the same as the two GET above
+  resources 'products', only: %i[index show]
 end
