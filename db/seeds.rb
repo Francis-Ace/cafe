@@ -21,13 +21,13 @@ coffee = Category.create(
 
 food = Category.create(
   name: 'Food',
-  description: 'appetizing, delectable, delish, divine,
+  description: 'Appetizing, delectable, delish, divine,
   flavorful, flavorsome, flavory, full-flavored'
 )
 
 dessert = Category.create(
   name: 'Dessert',
-  description: 'royally luxurious, vaguely sweet, multilayered,
+  description: 'Royally luxurious, vaguely sweet, multilayered,
   delicious, delightfully rich, deliciously gooey'
 )
 
@@ -35,10 +35,9 @@ dessert = Category.create(
 
 # number_of_categories.new(3) ['Coffee', 'Food', 'Dessert']
 
-PRODUCTS_PER_CATEGORIES = 20
-
+products_per_categories = rand(10..20)
 # Creates the 10 products under the coffee category
-PRODUCTS_PER_CATEGORIES.times do
+products_per_categories.times do
   product_name = Faker::Coffee.blend_name
   product_description = Faker::Coffee.notes
   product_price = rand(5.5..15.9)
@@ -49,8 +48,9 @@ PRODUCTS_PER_CATEGORIES.times do
                          quantity: product_quantity)
 end
 
+products_per_categories = rand(10..20)
 # Creates the 10 products under the food category
-PRODUCTS_PER_CATEGORIES.times do
+products_per_categories.times do
   product_name2 = Faker::Food.dish
   product_description2 = Faker::Food.description
   product_price2 = rand(5.5..15.9)
@@ -61,8 +61,9 @@ PRODUCTS_PER_CATEGORIES.times do
                        quantity: product_quantity2)
 end
 
+products_per_categories = rand(10..20)
 # Creates the 10 products under the dessert category
-PRODUCTS_PER_CATEGORIES.times do
+products_per_categories.times do
   product_name3 = Faker::Dessert.variety
   product_description3 = Faker::Dessert.flavor
   product_price3 = rand(5.5..15.9)

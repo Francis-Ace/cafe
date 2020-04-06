@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Cafe2020</title>
+    <title>Frank's Cafe online order</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,10 @@
   </head>
 
   <body>
+  <header>
+    <h1>Frank's Cafe</h1>
+    <p><%= link_to 'Home', root_path %></p>
+  </header>
     <%= yield %>
   </body>
 </html>
