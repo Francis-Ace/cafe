@@ -13,17 +13,23 @@ Product.destroy_all
 Category.destroy_all
 
 # Put 3 cetegories of food in the category table
-coffee = Category.create(name: 'Coffee',
-                         description: 'A brewed drink prepared from roasted coffee beans,
-                         the seed of berries from certain Coffea spices.')
+coffee = Category.create(
+  name: 'Coffee',
+  description: 'A brewed drink prepared from roasted coffee beans,
+  the seed of berries from certain Coffea spices.'
+)
 
-food = Category.create(name: 'Food',
-                       description: 'appetizing, delectable, delish, divine,
-                       flavorful, flavorsome, flavory, full-flavored')
+food = Category.create(
+  name: 'Food',
+  description: 'appetizing, delectable, delish, divine,
+  flavorful, flavorsome, flavory, full-flavored'
+)
 
-dessert = Category.create(name: 'Dessert',
-                          description: 'royally luxurious, vaguely sweet, multilayered,
-                          delicious, delightfully rich, deliciously gooey')
+dessert = Category.create(
+  name: 'Dessert',
+  description: 'royally luxurious, vaguely sweet, multilayered,
+  delicious, delightfully rich, deliciously gooey'
+)
 
 # Create the 10 products per categories
 
