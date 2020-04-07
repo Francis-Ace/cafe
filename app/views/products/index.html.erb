@@ -6,7 +6,10 @@
 <% else %>
   <ul>
     <% @products.each do |product| %>
-      <li><%= product.name %></li>
+      <li>
+        <%= link_to product.name, product_path(product) %>
+        <p>Category: <%= link_to product.category.name, category_path(product.category) %></p>
+      </li>
     <% end %>
   </ul>
 <% end %>

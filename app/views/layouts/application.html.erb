@@ -12,7 +12,11 @@
   <body>
   <header>
     <h1>Frank's Cafe</h1>
-    <p><%= link_to 'Home', root_path %></p>
+    <p>
+      <%= link_to 'Home', root_path %> |
+      <%= link_to 'Products', products_path %>
+    </p>
+
   </header>
     <%= yield %>
     <footer>Copyright Francis Cruz for Frank's Cafe 2020</footer>

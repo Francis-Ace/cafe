@@ -31,11 +31,17 @@ dessert = Category.create(
   delicious, delightfully rich, deliciously gooey'
 )
 
+beer = Category.create(
+  name: 'Beer',
+  description: 'An alcoholic beverage, made from malted cereal grain,
+  flavored with hops, and brewed by slow fermentation.'
+)
+
 # Create the 10 products per categories
 
 # number_of_categories.new(3) ['Coffee', 'Food', 'Dessert']
 
-products_per_categories = rand(10..20)
+products_per_categories = rand(25..30)
 # Creates the 10 products under the coffee category
 products_per_categories.times do
   product_name = Faker::Coffee.blend_name
@@ -48,7 +54,7 @@ products_per_categories.times do
                          quantity: product_quantity)
 end
 
-products_per_categories = rand(10..20)
+products_per_categories = rand(25..30)
 # Creates the 10 products under the food category
 products_per_categories.times do
   product_name2 = Faker::Food.dish
@@ -61,7 +67,7 @@ products_per_categories.times do
                        quantity: product_quantity2)
 end
 
-products_per_categories = rand(10..20)
+products_per_categories = rand(25..30)
 # Creates the 10 products under the dessert category
 products_per_categories.times do
   product_name3 = Faker::Dessert.variety
@@ -72,6 +78,19 @@ products_per_categories.times do
                           price: product_price3,
                           description: product_description3,
                           quantity: product_quantity3)
+end
+
+products_per_categories = rand(25..30)
+# Creates the 10 products under the dessert category
+products_per_categories.times do
+  product_name4 = Faker::Beer.name
+  product_description4 = Faker::Beer.style
+  product_price4 = rand(5.5..15.9)
+  product_quantity4 = rand(20..50)
+  dessert.products.create(name: product_name4,
+                          price: product_price4,
+                          description: product_description4,
+                          quantity: product_quantity4)
 end
 
 puts "Created #{Category.count} Categories"
