@@ -87,7 +87,7 @@ products_per_categories.times do
   product_description4 = Faker::Beer.style
   product_price4 = rand(5.5..15.9)
   product_quantity4 = rand(20..50)
-  dessert.products.create(name: product_name4,
+  beer.products.create(name: product_name4,
                           price: product_price4,
                           description: product_description4,
                           quantity: product_quantity4)
