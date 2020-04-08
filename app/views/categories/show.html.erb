@@ -7,9 +7,14 @@
 <% if @category.products.empty? %>
   <p>Sorry we are out of stock of any of our <%= @category.name %> products.</p>
 <% else %>
- <ul>
-  <% @category.products.each do  |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
-  <% end %>
- </ul>
+    <%# to use this put back the percent sign where removed and delete the render to remove partials %>
+    <%# <ul>
+      < @category.products.each do  |product| >
+        <li><= link_to product.name, product_path(product) ></li>
+      < end >
+    </ul> %>
+
+  <%= render @category.products %>
 <% end %>
+
+

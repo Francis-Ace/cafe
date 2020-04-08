@@ -1,4 +1,8 @@
 <%# <h1>Products#show</h1>
 <p>Find me in app/views/products/show.html.erb</p> %>
-<h2><%= @product.name %></h2>
-<p>Category: <%= @product.category.name %></p>
+
+<%# to use this put back the percent sign where removed and delete the render to remove partials %>
+<%# <h2 class="title is-3" style="margin-top: 20px"><= @product.name ></h2>
+<p>Category: <= link_to @product.category.name, @product.category ></p> %>
+
+<%= render @product %>
