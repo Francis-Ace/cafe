@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   # Get /products/:id => products#show
   # This is the same as the two GET above
   resources "products", only: %i[index show]
+
+  get 'search', to: 'products#search', as: 'search' # Known as seach_path
 end

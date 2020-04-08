@@ -14,4 +14,9 @@ class ProductsController < ApplicationController
   end
   # Automagically loads the associated view:
   # app/views/products/show.html.erb
+
+  # GET /search/>search_term=user+search+terms
+  def search
+    @products = Product.where("name LIKE '%#{params[:search_term]}%'")
+  end
 end
