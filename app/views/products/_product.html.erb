@@ -1,1 +1,13 @@
-<p><%= link_to product.name, product %></p>
+<div class='column'>
+  <div class="card">
+    <div class="card-content" style='height: 200px'>
+      <p class='title'><%= link_to product.name, product %></p>
+      <p>Description: <%= product.description %></p>
+    </div>
+    <footer class="card-footer">
+      <p class="card-footer-item">Category: <%= link_to product.category.name, product.category %></p>
+      <p class="card-footer-item">Price: <br>$<%= product.price.round(2) %></p>
+      <p class="card-footer-item">Quantity: <br><%= product.quantity %></p>
+    </footer>
+  </div>
+</div>

@@ -1,9 +1,9 @@
 <%# <h1>Categories#show</h1>
 <p>Find me in app/views/categories/show.html.erb</p> %>
-<h2><%= @category.name %></h2>
-<p>There are <%= @category.products.count %> different <%= @category.name %> that we sell in our store.</p>
+<h2 class="title is-3" style='margin-top: 20px'><%= @category.name %></h2>
+<h4 class="subtitle is-5">We sell <%= @category.products.count %> different <%= @category.name %> cafe.</h4>
 
-<p><%= @category.name %> menu items.</p>
+<h5 class="subtitle is-4" style='margin-top: 20px'><%= @category.name %> menu items.</h5>
 <% if @category.products.empty? %>
   <p>Sorry we are out of stock of any of our <%= @category.name %> products.</p>
 <% else %>
@@ -13,8 +13,9 @@
         <li><= link_to product.name, product_path(product) ></li>
       < end >
     </ul> %>
-
+<div class='columns is-multiline'>
   <%= render @category.products %>
+</div>
 <% end %>
 
 
