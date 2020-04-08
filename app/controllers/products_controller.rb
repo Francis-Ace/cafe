@@ -17,6 +17,6 @@ class ProductsController < ApplicationController
 
   # GET /search/>search_term=user+search+terms
   def search
-    @products = Product.where("name LIKE ?", "%#{params[:search_term]}%")
+    @products = Product.where("name LIKE ?", "%#{params[:search_term]}%").or(Product.where("description LIKE ?", "%#{params[:search_term]}%"))
   end
 end
