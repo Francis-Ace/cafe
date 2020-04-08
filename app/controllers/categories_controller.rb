@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-
   # Get / triggers this action
   def index
     @categories = Category.all
