@@ -37,6 +37,7 @@ gem "faker", git: "https://github.com/faker-ruby/faker.git", branch: "master"
 
 gem 'activeadmin'   # The admin dashboard gem
 gem 'devise'        # Authentication Gem
+gem "google-cloud-storage", "~> 1.11", require: false
 
 
 group :development, :test do
