@@ -6,6 +6,15 @@
       <%= text_field_tag(:search_term, nil, class: 'input', placeholder: 'Search for product') %>
     </div>
     <div class="control">
+      <select name="search_product">
+      <option value="" selected="selected">Category</option>
+        <option value="158" >coffee</option>
+        <option value="159" >food</option>
+        <option value="160">dessert</option>
+        <option value="161">beer</option>
+      </select>
+    </div>
+    <div class="control">
       <%= submit_tag("Search", class: 'button is-info') %>
     </div>
   </div>
