@@ -48,10 +48,10 @@ products_per_categories.times do
   product_description = Faker::Coffee.notes
   product_price = rand(5.5..15.9)
   product_quantity = rand(20..50)
-  coffee.products.create(name:        product_name,
-                         price:       product_price,
-                         description: product_description,
-                         quantity:    product_quantity)
+  product = coffee.products.create(name:        product_name,
+                                   price:       product_price,
+                                   description: product_description,
+                                   quantity:    product_quantity)
 
   downloaded_image = open(URI.escape("https://source.unsplash.com/600x600/?#{[product.name]}"))
   product.image.attach(io: downloaded_image, filename: "m-#{[product.name, product_quantity].join('-')}.jpg")
@@ -65,10 +65,10 @@ products_per_categories.times do
   product_description2 = Faker::Food.description
   product_price2 = rand(5.5..15.9)
   product_quantity2 = rand(20..50)
-  food.products.create(name:        product_name2,
-                       price:       product_price2,
-                       description: product_description2,
-                       quantity:    product_quantity2)
+  product2 = food.products.create(name:        product_name2,
+                                  price:       product_price2,
+                                  description: product_description2,
+                                  quantity:    product_quantity2)
 
   downloaded_image = open(URI.escape("https://source.unsplash.com/600x600/?#{[product2.name]}"))
   product2.image.attach(io: downloaded_image, filename: "m-#{[product2.name, product_quantity2].join('-')}.jpg")
@@ -82,10 +82,10 @@ products_per_categories.times do
   product_description3 = Faker::Dessert.flavor
   product_price3 = rand(5.5..15.9)
   product_quantity3 = rand(20..50)
-  dessert.products.create(name:        product_name3,
-                          price:       product_price3,
-                          description: product_description3,
-                          quantity:    product_quantity3)
+  product3 = dessert.products.create(name:        product_name3,
+                                     price:       product_price3,
+                                     description: product_description3,
+                                     quantity:    product_quantity3)
 
   downloaded_image = open(URI.escape("https://source.unsplash.com/600x600/?#{[product3.name]}"))
   product3.image.attach(io: downloaded_image, filename: "m-#{[product3.name, product_quantity3].join('-')}.jpg")
