@@ -53,7 +53,7 @@ products_per_categories.times do
                                    description: product_description,
                                    quantity:    product_quantity)
 
-  downloaded_image = open(URI.escape("https://source.unsplash.com/600x600/?#{[product.name]}"))
+  downloaded_image = open(CGI.escape("https://source.unsplash.com/600x600/?#{[product.name]}"))
   product.image.attach(io: downloaded_image, filename: "m-#{[product.name, product_quantity].join('-')}.jpg")
   sleep(1) # Throttle a tad. Needed?
 end
@@ -70,7 +70,7 @@ products_per_categories.times do
                                   description: product_description2,
                                   quantity:    product_quantity2)
 
-  downloaded_image = open(URI.escape("https://source.unsplash.com/600x600/?#{[product2.name]}"))
+  downloaded_image = open(CGI.escape("https://source.unsplash.com/600x600/?#{[product2.name]}"))
   product2.image.attach(io: downloaded_image, filename: "m-#{[product2.name, product_quantity2].join('-')}.jpg")
   sleep(1) # Throttle a tad. Needed?
 end
@@ -87,7 +87,7 @@ products_per_categories.times do
                                      description: product_description3,
                                      quantity:    product_quantity3)
 
-  downloaded_image = open(URI.escape("https://source.unsplash.com/600x600/?#{[product3.name]}"))
+  downloaded_image = open(CGI.escape("https://source.unsplash.com/600x600/?#{[product3.name]}"))
   product3.image.attach(io: downloaded_image, filename: "m-#{[product3.name, product_quantity3].join('-')}.jpg")
   sleep(1) # Throttle a tad. Needed?
 end
@@ -104,7 +104,7 @@ products_per_categories.times do
                                   description: product_description4,
                                   quantity:    product_quantity4)
 
-  downloaded_image = open(URI.escape("https://source.unsplash.com/600x600/?#{[product4.name]}"))
+  downloaded_image = open(CGI.escape("https://source.unsplash.com/600x600/?#{[product4.name]}"))
   product4.image.attach(io: downloaded_image, filename: "m-#{[product4.name, product_quantity4].join('-')}.jpg")
   sleep(1) # Throttle a tad. Needed?
 end

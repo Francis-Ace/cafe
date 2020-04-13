@@ -19,8 +19,13 @@
     </div>
     <footer class="card-footer">
       <p class="card-footer-item">Category: <%= link_to product.category.name, product.category %></p>
-      <p class="card-footer-item">Price: <br>$<%= product.price.round(2) %></p>
+      <p class="card-footer-item">Price: <br><%= number_to_currency product.price.round(2) %></p>
       <p class="card-footer-item">Quantity: <br><%= product.quantity %></p>
+      <% if @cart.include?(product)%>
+        <p><%= button_to 'Remove from cart', remove_from_cart_url(product), method: :delete %></p>
+      <% else %>
+        <p class="card-footer-item"><%= link_to 'Add to cart', add_to_cart_url(product.id), method: :post %></p>
+      <% end %>
     </footer>
   </div>
 </div>

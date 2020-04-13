@@ -17,6 +17,7 @@
       <header>
         <h1 class="title is-1">Frank's Cafe</h1>
         <h2 class='subtitle is-4'>Enjoy some of the great foods downtown Toronto has to offer!!</h2>
+        <p>You have visited this site <%= pluralize @visit_count, 'time'%></p>
         <p>
           <%= link_to 'Home', root_path %> |
           <%= link_to 'Products', products_path %> |
@@ -25,7 +26,20 @@
         </p>
 
       </header>
+
       <%= render partial: 'products/search_form'%>
+      <details>
+        <summary>Shopping Cart</summary>
+        <% if @cart.empty? %>
+          <p>No items in cart</p>
+        <% else %>
+          <ul>
+            <% @cart.each do |product| %>
+              <li><%= product.name %> - <%= link_to 'Remove from cart', remove_from_cart_url(product), method: :delete %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </details>
       <%= yield %>
       <footer style='margin-top: 5%'>Copyright Francis Cruz for Frank's Cafe 2020</footer>
     </div>
